@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luxury Angels | Tours en Cartagena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#FFFAF0;--surface:#fff;--ink:#0B2545;--muted:#52627a;--gold:#B8892B;--gold2:#E3B64F;--teal:#0E8FA3;--line:rgba(11,37,69,.14);--glow:#FFE7A8;--btn:#0B2545;--btnink:#fff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1626;--surface:#122439;--ink:#F6EEDC;--muted:#A9B7C9;--gold:#E3B64F;--line:rgba(255,255,255,.14);--glow:#3b3320;--btn:#E3B64F;--btnink:#0A1626;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0A1626;--surface:#122439;--ink:#F6EEDC;--muted:#A9B7C9;--gold:#E3B64F;--line:rgba(255,255,255,.14);--glow:#3b3320;--btn:#E3B64F;--btnink:#0A1626;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.55 Manrope,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font:700 1.2rem Fraunces,serif;text-decoration:none}
+.brand i{color:var(--gold);font-weight:500}
+.btn{display:inline-block;border:0;cursor:pointer;font:800 .92rem Manrope,sans-serif;padding:12px 22px;border-radius:999px;background:var(--btn);color:var(--btnink);text-decoration:none;text-align:center}
+.btn.wa{background:#12a150;color:#fff}
+.btn.sm{padding:9px 16px;font-size:.85rem}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+/* hero */
+.hero{position:relative;overflow:hidden;text-align:center;background:radial-gradient(500px 320px at 80% 0%,var(--glow),transparent 70%),radial-gradient(420px 300px at 0% 100%,color-mix(in srgb,var(--teal) 22%,transparent),transparent 70%)}
+.hero .wrap{padding-top:22px;padding-bottom:84px}
+.arch{width:min(210px,56vw);margin:0 auto 18px;background:#fff;border-radius:999px 999px 24px 24px;padding:22px 16px 12px;border:2px solid var(--gold2);box-shadow:0 24px 46px -26px rgba(11,37,69,.55)}
+.arch img{width:100%;height:auto;display:block}
+.hero h1{font-size:clamp(2.2rem,10.5vw,4rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){color:var(--gold);font-style:italic;font-weight:500}
+.hero h1 span:nth-child(3){color:var(--teal)}
+.hero p{color:var(--muted);margin:14px auto 22px;max-width:30ch}
+.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:56px;display:block}
+.wave path{fill:var(--bg)}
+.reveal{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+/* categorías */
+#tours{padding:26px 0 8px}
+#tours h2{font-size:1.75rem}
+.hint{color:var(--muted);margin:6px 0 18px;font-size:.95rem}
+.cats{display:grid;gap:12px}
+details.cat{border-radius:24px;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 20px;color:#fff;background:linear-gradient(120deg,hsl(var(--h) 75% 36%),hsl(calc(var(--h) + 28) 80% 24%))}
+summary::-webkit-details-marker{display:none}
+summary h3{font-size:1.6rem}
+summary small{display:block;margin-top:4px;opacity:.92;font:600 .85rem Manrope,sans-serif}
+summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font:600 1.6rem/1 Manrope,sans-serif;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+.panel{padding:6px 18px 14px}
+.panel>p{color:var(--muted);font-size:.92rem;margin:10px 0 4px}
+.panel ul{list-style:none;margin:0;padding:0}
+.panel li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.panel li:first-child{border-top:0}
+.panel li div{min-width:0}
+.panel strong{display:block;font:700 1.05rem/1.2 Fraunces,serif}
+.panel span{color:var(--muted);font-size:.85rem}
+.steps{margin:22px 0 0;color:var(--muted);font-size:.92rem;text-align:center}
+footer{padding:34px 0 96px;margin-top:30px;border-top:1px solid var(--line);text-align:center}
+footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-weight:600;margin-top:10px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:#12a150;display:grid;place-items:center;box-shadow:0 12px 26px -8px rgba(0,0,0,.5)}
+.fab svg{width:30px;height:30px;fill:#fff}
+dialog{border:0;border-radius:26px;padding:0;width:min(440px,92vw);max-height:92dvh;overflow:auto;background:var(--surface);color:var(--ink);box-shadow:0 40px 80px -20px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(5,15,30,.6);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .25s ease-out}
+@keyframes pop{from{opacity:0;transform:scale(.95)}}
+.m{padding:22px}
+.m h3{font-size:1.5rem}
+.m p{color:var(--muted);margin:6px 0 10px;font-size:.92rem}
+.m label{display:block;font-weight:600;font-size:.88rem;margin:10px 0 4px}
+.m input{width:100%;font:inherit;font-size:16px;padding:11px 13px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.m .row{display:flex;gap:10px;margin-top:16px}
+.m .row .btn{flex:1}
+.err{color:#c2185b;font-size:.86rem;min-height:1.2em;margin-top:6px}
+.btn{transition:transform .2s ease,box-shadow .2s ease}
+.btn:active{transform:scale(.96)}
+@media(hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px -10px rgba(0,0,0,.45)}}
+.hero h1 span{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.15s}
+.hero h1 span:nth-child(3){animation-delay:.3s}
+.hero p,.cta{animation:up .9s cubic-bezier(.2,.7,.2,1) .45s both}
+.arch{animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#12a150;z-index:-1;animation:ring 2.6s ease-out infinite}
+@keyframes ring{from{opacity:.55;transform:scale(1)}to{opacity:0;transform:scale(1.7)}}
+details[open] .panel{animation:drop .35s ease both}
+@keyframes drop{from{opacity:0;transform:translateY(-8px)}}
+details[open] li{animation:up .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*60ms + 80ms)}
+@supports (animation-timeline:view()){details.cat{animation:up linear both;animation-timeline:view();animation-range:entry 0% entry 45%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media(min-width:700px){.hero .wrap{padding-bottom:96px}}
+
+#apartamentos{padding:34px 0 8px}
+#apartamentos h2{font-size:1.75rem}
+.gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+.gal img{flex:none;width:min(74vw,290px);aspect-ratio:3/4;object-fit:cover;border-radius:20px;scroll-snap-align:center;border:1px solid var(--line);background:var(--surface)}
+.apt{margin-top:14px;padding:20px;border-radius:24px;background:var(--surface);border:1px solid var(--line)}
+.apt h3{font-size:1.5rem}
+.apt .meta{color:var(--muted);font-size:.92rem;margin:8px 0 0}
+.chips{list-style:none;margin:14px 0 4px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{padding:7px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:.85rem;font-weight:600}
+.apt .cta{margin-top:16px;justify-content:flex-start}
+.m .ok{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:.82rem;margin-top:14px;cursor:pointer}
+.m .ok input{width:22px;height:22px;flex:none;padding:0;margin-top:2px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top">Luxury <i>Angels</i></a>
+<a class="btn wa sm" href="https://wa.me/573225023624">WhatsApp</a>
+</div></header>
+
+<main id="top">
+<div class="hero">
+<div class="wrap reveal">
+<div class="arch"><img alt="Logo de Luxury Angels Tours Cartagena" src="logo.jpg"></div>
+<h1><span>Descubre.</span><span>Explora.</span><span>Disfruta.</span></h1>
+<p>Tours en Cartagena con atención personalizada.</p>
+<div class="cta"><a class="btn" href="#tours">Ver tours</a><a class="btn ghost" href="#apartamentos">Ver apartamentos</a></div>
+</div>
+<svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C240 4 420 56 720 32S1200 4 1440 28V56H0Z"/></svg>
+</div>
+
+<section id="tours"><div class="wrap">
+<h2>Elige tu plan</h2>
+<p class="hint">Toca una categoría para ver los tours y sus precios.</p>
+<div class="cats" id="cats"></div>
+<p class="steps">Elige un tour, llena el formato y recibe la confirmación por WhatsApp.</p>
+</div></section>
+
+<section id="apartamentos"><div class="wrap">
+<h2>Apartamentos por día</h2>
+<p class="hint">Casa dúplex amoblada en Barranquilla, cerca del estadio Metropolitano.</p>
+<div class="gal" aria-label="Fotos del apartamento"><img src="apto1.jpg" alt="Sala con sofá, televisor y aire acondicionado" loading="lazy"><img src="apto2.jpg" alt="Sala y cocina con nevera y barra" loading="lazy"><img src="apto3.jpg" alt="Habitación con cama y aire acondicionado" loading="lazy"><img src="apto4.jpg" alt="Habitación con cama doble" loading="lazy"><img src="apto5.jpg" alt="Balcón con mesa y dos sillas" loading="lazy"><img src="apto6.jpg" alt="Baño con lavamanos y espejo" loading="lazy"><img src="apto7.jpg" alt="Ducha con vidrio" loading="lazy"><img src="apto8.jpg" alt="Sala con dos sillones reclinables" loading="lazy"></div>
+<div class="apt">
+<h3>Dúplex en Los Girasoles</h3>
+<ul class="chips"><li>Wifi</li><li>Aire acondicionado</li><li>Smart TV</li><li>Cocina completa</li><li>Parqueo gratis en la calle</li><li>Cámara de seguridad y chapa digital</li><li>Se permiten mascotas</li><li>Recogida en el aeropuerto</li></ul>
+<p class="meta"><strong>Hasta 6 huéspedes · 3 habitaciones · 6 camas · 1 baño</strong></p>
+<p class="meta">Check-in 3:00 p. m. · Check-out 11:00 a. m.</p>
+<p class="meta">Consulta tarifa y disponibilidad por WhatsApp. La ubicación exacta se envía al confirmar tu reserva.</p>
+<div class="cta"><a class="btn wa" href="https://wa.me/573225023624?text=Hola%20Luxury%20Angels%2C%20quiero%20reservar%20el%20apartamento%20en%20Barranquilla.">Reservar por WhatsApp</a><a class="btn" href="https://www.airbnb.cl/rooms/1793283848941156691" target="_blank" rel="noopener">Ver y reservar en Airbnb</a></div>
+<p class="meta">Si reservas por Airbnb, el check-in y el envío de documentos se hacen directamente allí.</p>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<a class="brand" href="#top">Luxury <i>Angels</i></a>
+<div style="color:var(--muted);font-size:.9rem">Tours Cartagena, Colombia</div>
+<div class="links"><a href="https://www.instagram.com/angelsluxury20_">Instagram</a><a href="https://www.tiktok.com/@luxuryangels20">TikTok</a><a href="https://wa.me/573225023624">+57 322 502 3624</a></div>
+</div></footer>
+
+<a class="fab" href="https://wa.me/573225023624" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.600 15L2 22l5.100-1.300A10 10 0 1 0 12 2Zm5.800 14.100c-.2.700-1.400 1.300-2 1.400-.5.100-1.200.1-1.900-.1-.4-.1-1-.3-1.700-.6-3-1.300-4.900-4.300-5-4.500-.1-.2-1.200-1.600-1.200-3s.8-2.200 1-2.500c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.100c.1.200.1.400 0 .5l-.4.600-.4.400c-.1.200-.3.300-.1.600.2.300.7 1.200 1.500 1.900 1 .9 1.900 1.200 2.200 1.300.3.100.4.100.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.100.5.200.5.300.1.200.1.800-.1 1.500Z"/></svg></a>
+
+<dialog id="dlg"><div class="m">
+<h3 id="dt">Reserva</h3><p>Completa el formato y se abrirá WhatsApp con el mensaje listo.</p>
+<label for="f1">Fecha del tour</label><input id="f1" type="date">
+<label for="f2">Titular de la reserva</label><input id="f2" autocomplete="name">
+<label for="f3">Identificación</label><input id="f3" inputmode="numeric">
+<label for="f4">Número de pasajeros</label><input id="f4" type="number" min="1" value="2">
+<label for="f5">Número de contacto</label><input id="f5" type="tel" autocomplete="tel">
+<label class="ok" for="f6"><input id="f6" type="checkbox"> Autorizo el tratamiento de mis datos personales para gestionar mi reserva (Ley 1581 de 2012).</label>
+<div class="err" id="err" role="alert"></div>
+<div class="row"><button class="btn ghost" id="x">Cancelar</button><button class="btn wa" id="go">Enviar por WhatsApp</button></div>
+</div></dialog>
+
+<script>
+var REGISTRO_URL="https://script.google.com/macros/s/AKfycbwZeWuJk0vf-klV08cvi09-5Pby-6BNMVRRU40oYCAYWsQ3wRjF5EVWbnJ8fVs8puE_yQ/exec";
+var D=[
+{k:"Playas de Barú",h:38,w:"Un día de playa en Barú, con aguas turquesas y arena blanca.",l:[["Playa Blanca Barú",95],["Playa Tranquila Barú",170],["Playa Blanca + Plancton",195],["Aviario Nacional + Playa Blanca",255]]},
+{k:"Islas del Rosario",h:192,w:"Recorridos en lancha por el archipiélago del Rosario, cerca de Cartagena.",l:[["Islas del Rosario Tradicional",150],["4 Islas Premium",240],["Aventura 4 Destinos",290],["5 Islas VIP",330],["Top Lux Islas del Rosario",370],["Catamarán Islas del Rosario",380],["Top 3 Islas Privadas",490]]},
+{k:"Clubes de playa",h:335,w:"Clubes de playa e islas privadas en Islas del Rosario, para un día de descanso.",l:[["Sol y Papaya",270],["Cholón",310],["Cocoliso Island",365],["Bela Beach",370],["Pao Pao Beach Club",370],["Isla del Sol",370],["Mangata Beach Club",380],["Isla del Encanto",390],["Bora Bora Beach Club",400],["Luxury Beach Club",420]]}];
+var box=document.getElementById("cats"),dlg=document.getElementById("dlg"),cur="";
+function money(n){return "$"+(n*1000).toLocaleString("es-CO")+" COP"}
+D.forEach(function(c){
+var d=document.createElement("details");d.className="cat";d.name="cat";d.style.setProperty("--h",c.h);
+d.innerHTML='<summary><div><h3>'+c.k+'</h3><small>'+c.l.length+' planes, desde '+money(c.l[0][1])+'</small></div></summary><div class="panel"><p>'+c.w+'</p><ul></ul></div>';
+var ul=d.querySelector("ul");
+c.l.forEach(function(t,i){var li=document.createElement("li");li.style.setProperty("--i",i);
+li.innerHTML='<div><strong>'+t[0]+'</strong><span>Desde '+money(t[1])+' por persona</span></div><button class="btn sm">Reservar</button>';
+li.querySelector("button").onclick=function(){cur=t[0];document.getElementById("dt").textContent=t[0];document.getElementById("err").textContent="";document.getElementById("f6").checked=false;dlg.showModal()};
+ul.appendChild(li)});
+box.appendChild(d)});
+document.getElementById("x").onclick=function(){dlg.close()};
+document.getElementById("go").onclick=function(){
+var v=["f1","f2","f3","f4","f5"].map(function(i){return document.getElementById(i).value.trim()});
+if(v.some(function(x){return!x})){document.getElementById("err").textContent="Completa todos los campos para enviar tu reserva.";return}
+if(!document.getElementById("f6").checked){document.getElementById("err").textContent="Debes autorizar el tratamiento de tus datos para continuar.";return}
+var m="Hola Luxury Angels, quiero reservar: "+cur+"\n\n📅 Fecha: "+v[0]+"\n✅ Titular: "+v[1]+"\n🪪 Identificación: "+v[2]+"\n#️⃣ Pasajeros: "+v[3]+"\n📲 # de contacto: "+v[4];
+if(REGISTRO_URL){try{fetch(REGISTRO_URL,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({tour:cur,fecha:v[0],titular:v[1],id:v[2],pasajeros:v[3],contacto:v[4],autoriza:true})})}catch(x){}}
+window.open("https://wa.me/573225023624?text="+encodeURIComponent(m),"_blank");dlg.close()};
+</script>
+</body>
+</html>
